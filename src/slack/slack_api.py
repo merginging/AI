@@ -1,7 +1,7 @@
 import requests
 
-# acces_token 조회 api(아직 개발 안됨)
-SLACK_TOKEN_API = "https://www.branchify.site/api/oauth/slack/token"
+# acces_token 조회 api(
+SLACK_TOKEN_API = "https://www.branchify.site/api/assistantlist/search"
 
 def get_slack_access_token(user_email: str, assistant_name: str):
     params = {
@@ -13,9 +13,11 @@ def get_slack_access_token(user_email: str, assistant_name: str):
 
     if response.status_code == 200:
         slack_data = response.json()
-        slack_token = slack_data.get("access_token")
+        slack_oauth = slack_data.get("slackOAuth", {})
+        slack_token = slack_oauth.get("accessToken")
+
         if slack_token:
-            print(f"✅ Slack Access Token 가져오기:: {slack_token[:10]}...")
+            print(f"✅ Slack Access Token 가져오기: {slack_token[:10]}...")
             return slack_token
         else:
             raise ValueError("❌ Slack Access Token이 응답에 포함되지 않음")
@@ -27,4 +29,4 @@ if __name__ == "__main__":
     TEST_EMAIL = "test@gmail.com"
     TEST_ASSISTANT_NAME = "assistant1"
     token = get_slack_access_token(TEST_EMAIL, TEST_ASSISTANT_NAME)
-    print(f"🔑 Slack Token: {token[:10]}...")
+    print(f"🔑 Slack Token: {token}")
