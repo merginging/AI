@@ -3,6 +3,7 @@ import sys
 import requests
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
 from src.slack.slack_api import get_slack_access_token
 
 # 사용자 입력할때마다 조회하는 걸로 변경 
