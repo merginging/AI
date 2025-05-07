@@ -1,3 +1,5 @@
+# notion 변경 사항 감지시 모델에 source data 업데이트 
+
 import os
 import sys
 

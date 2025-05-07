@@ -28,6 +28,7 @@ def get_loader_for_file(file_path):
     else:
         raise ValueError(f"Unsupported file type: {file_path}")
 
+
 def process_document(file_path):
     """
     문서를 로드 및 텍스트 청크로 분할
@@ -39,4 +40,7 @@ def process_document(file_path):
     return spilt_docs
 
 def is_supported_file(file_path):
+    """
+    전처리를 지원하는 파일인지 확인
+    """
     return file_path.lower().endswith(SUPPORTED_EXTENSIONS)

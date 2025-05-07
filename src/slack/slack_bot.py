@@ -1,3 +1,5 @@
+# 슬랙에서 봇 작동 함수 
+# 구현 덜 함 
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
