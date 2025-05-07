@@ -1,3 +1,4 @@
+# slack oauth 생성시 알려줌 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 

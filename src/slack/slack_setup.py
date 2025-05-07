@@ -1,3 +1,4 @@
+# 구현 덜 함 db에서 조회하고 일치 했을때 돌리는 걸로 
 import os
 import sys
 import requests
